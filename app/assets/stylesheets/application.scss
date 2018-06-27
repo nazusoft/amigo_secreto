@@ -1,0 +1,61 @@
+@import "materialize";
+@import "material_icons";
+@import "variables";
+
+nav, .btn, .bg-primary{ background-color: $primary-color !important; }
+
+nav{
+  line-height: 0px !important;
+  padding-top: 1.8%;
+
+  a{
+    height: 20px;
+    line-height: 16px !important;
+  }
+}
+
+.text-primary{ color: $primary-color !important; }
+
+nav a{ color: $white !important; }
+
+nav a:hover{
+  color: $secondary-color !important;
+  background-color: $primary-color !important;
+}
+
+.btn:hover{ color: $white !important; }
+
+a{ color: $secondary-color !important; }
+
+a:hover{ color: $secondary-color-light !important; }
+
+.btn{ color: $white !important; }
+
+.btn:hover{ background-color: $secondary-color-light !important; }
+
+.container{ min-height: 530px; }
+
+.section{ padding: 0px !important; }
+
+.card-panel{ margin: 0px !important; }
+
+.nav-logo{
+  position: relative;
+  height: 15px;
+  width: auto;
+  margin-left: 20px;
+}
+
+nav .btn-entrar{ border-right: solid 1px $white; }
+
+.alert{
+  h6{
+    margin: 0px !important;
+  }
+
+  .btn-flat{
+    line-height: 20px;
+    height: auto;
+    padding: 0px;
+  }
+}

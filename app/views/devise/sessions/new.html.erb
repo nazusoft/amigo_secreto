@@ -1,0 +1,32 @@
+<div class="col m6 offset-m3" style="margin-top:5%">
+
+  <h4 class='center-align'>ENTRAR</h4>
+  
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+  
+    <div class="actions right" style="margin-top:3%">
+      <button class="btn waves-effect waves-light" type="submit" name="action">ENTRAR
+        <i class="material-icons right">play_for_work</i>
+      </button>
+    </div>
+
+    <div class="actions" style="margin-top:3%">
+      <div class="section">
+        <%= link_to raw('Esqueceu sua senha? Clique aqui.'), new_password_path(resource_name) %>
+      </div>
+      <div class="section">
+        <%= link_to raw('Criar conta'), new_user_registration_path %>
+      </div>
+    </div>
+  <% end %>
+
+</div>

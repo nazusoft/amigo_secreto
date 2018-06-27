@@ -1,0 +1,25 @@
+<div class="col m6 offset-m3" style="margin-top:5%">
+
+  <h4 class='center-align'>ESQUECEU SUA SENHA?</h4>
+  
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+  
+    <div class="actions right" style="margin-top:3%">
+      <%= f.submit "ENVIAR INSTRUÇÕES", class: 'btn' %>
+    </div>
+
+    <div class="actions" style="margin-top:3%">
+      <div class="section">
+        <%= link_to raw('Entrar'), new_user_session_path %>
+      </div>
+      <div class="section">
+        <%= link_to raw('Criar conta'), new_user_registration_path %>
+      </div>
+    </div>
+  <% end %>
+
+</div>

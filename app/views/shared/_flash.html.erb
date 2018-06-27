@@ -1,0 +1,15 @@
+<% if notice %>
+  <div class="card-panel green lighten-4 green-text text-darken-4 alert">
+    <h6>
+      <i class="tiny material-icons">check</i> <%= notice %>
+      <button class="waves-effect btn-flat alert-close right center-align" title="Fechar"><i class="material-icons">close</i></button>
+    </h6>
+  </div>
+<% elsif alert %>
+  <div class="card-panel red lighten-4 red-text text-darken-4 alert">
+    <h6>
+      <i class="tiny material-icons">cancel</i> <%= alert %>
+      <button class="waves-effect btn-flat alert-close right center-align" title="Fechar"><i class="material-icons">close</i></button>
+    </h6>
+  </div>
+<% end %>
