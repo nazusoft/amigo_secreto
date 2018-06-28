@@ -3,8 +3,13 @@
     <a href="/" class=""><%= image_tag '/logo-white.png', class: 'nav-logo' %></a>
 
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><%= link_to raw('ENTRAR'), new_user_session_path, class: 'btn-entrar' %></li>
-      <li><%= link_to raw('CRIAR CONTA'), new_user_registration_path %></li>
+      <% if current_user %>
+        <li><%= link_to raw('PERFIL'), edit_user_registration_path(current_user), class: 'btn-entrar' %></li>
+        <li><%= link_to raw('SAIR'), destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to raw('ENTRAR'), new_user_session_path, class: 'btn-entrar' %></li>
+        <li><%= link_to raw('CRIAR CONTA'), new_user_registration_path %></li>
+      <% end %>
     </ul>
   </div>
 </nav>
