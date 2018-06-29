@@ -36,7 +36,7 @@
     </div>
 
     <div class="actions right" style="margin-top:3%">
-      <%= f.submit "ATUALIZAR", class: 'btn right' %>
+      <%= f.submit "ATUALIZAR", class: 'btn right', id: 'btn-registration-edit' %>
     </div>
 
     <div class="actions" style="margin-top:3%">
@@ -47,6 +47,10 @@
       <div class='section'>
         <%= link_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Tem certeza que deseja cancelar a conta?" }, method: :delete %>
       </div>
+    </div>
+
+    <div class="actions center-align hide" style="margin-top:3%" id="preloading">
+      <%= render '/shared/preloading' %>
     </div>
   <% end %>
 

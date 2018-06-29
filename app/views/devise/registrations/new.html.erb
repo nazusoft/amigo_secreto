@@ -14,7 +14,7 @@
     </div>
   
     <div class="field">
-      <%= f.label :password %>
+      <%= f.label :password, 'Senha' %>
       <% if @minimum_password_length %>
       <em>(mínimo de <%= @minimum_password_length %> caracteres)</em>
       <% end %><br />
@@ -22,18 +22,22 @@
     </div>
   
     <div class="field">
-      <%= f.label :password_confirmation %><br />
+      <%= f.label :password_confirmation, 'Confirme a senha' %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
 
     <div class="actions right" style="margin-top:3%">
-      <%= f.submit "CADASTRAR", class: 'btn' %>
+      <%= f.submit "CADASTRAR", class: 'btn', id: 'btn-registration-new' %>
     </div>
 
     <div class="actions" style="margin-top:3%">
       <div class="section">
         <%= link_to raw('Entrar'), new_user_session_path %>
       </div>
+    </div>
+
+    <div class="actions center-align hide" style="margin-top:3%" id="preloading">
+      <%= render '/shared/preloading' %>
     </div>
   <% end %>
 

@@ -9,7 +9,7 @@
     </div>
   
     <div class="actions right" style="margin-top:3%">
-      <%= f.submit "ENVIAR INSTRUÇÕES", class: 'btn' %>
+      <%= f.submit "ENVIAR INSTRUÇÕES", class: 'btn', id: 'btn-recovery-pass' %>
     </div>
 
     <div class="actions" style="margin-top:3%">
@@ -20,6 +20,11 @@
         <%= link_to raw('Criar conta'), new_user_registration_path %>
       </div>
     </div>
+
+    <div class="actions center-align hide" style="margin-top:3%" id="preloading">
+      <%= render '/shared/preloading' %>
+    </div>
+
   <% end %>
 
 </div>

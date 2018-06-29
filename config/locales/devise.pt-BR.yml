@@ -3,7 +3,7 @@
 pt-BR:
   devise:
     confirmations:
-      confirmed: "Sua conta foi confirmada com sucesso. Você está logado."
+      confirmed: "Sua conta foi confirmada com sucesso."
       send_instructions: "Dentro de minutos, você receberá um e-mail com instruções para a confirmação da sua conta."
       send_paranoid_instructions: "Se o seu endereço de e-mail estiver cadastrado, você receberá uma mensagem com instruções para confirmação da sua conta."
     failure:
@@ -18,11 +18,11 @@ pt-BR:
       unconfirmed: "Antes de continuar, confirme a sua conta."
     mailer:
       confirmation_instructions:
-        subject: "B2BTech - Instruções de confirmação"
+        subject: "Amigo Secreto - Instruções de confirmação"
       reset_password_instructions:
-        subject: "B2BTech - Instruções de troca de password"
+        subject: "Amigo Secreto - Instruções de troca de password"
       unlock_instructions:
-        subject: "B2BTech - Instruções de desbloqueio"
+        subject: "Amigo Secreto - Instruções de desbloqueio"
     omniauth_callbacks:
       failure: "Não foi possível autenticá-lo como %{kind} porque \"%{reason}\"."
       success: "Autenticado com sucesso com uma conta de %{kind}."
