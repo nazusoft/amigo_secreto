@@ -34,17 +34,9 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { host: Rails.application.credentials[Rails.env.to_sym][:domain_name] }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
-  config.action_mailer.smtp_settings = {
-    address:              "smtp.gmail.com",
-    port:                 587,
-    domain:               Rails.application.credentials[Rails.env.to_sym][:domain_name],
-    authentication:       "plain",
-    enable_starttls_auto: true,
-    user_name:            Rails.application.credentials[Rails.env.to_sym][:smtp_email_username],
-    password:             Rails.application.credentials[Rails.env.to_sym][:smtp_email_password]
-  }
+  config.action_mailer.smtp_settings = { :address => 'mailcatcher', :port => 1025 }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
