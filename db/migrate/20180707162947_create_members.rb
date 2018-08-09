@@ -7,7 +7,7 @@ class CreateMembers < ActiveRecord::Migration[5.2]
       t.boolean :open
       t.string  :token
 
-      t.references :campaing, foreign_key: true
+      t.references :campaign, foreign_key: true
 
       t.timestamps
     end
