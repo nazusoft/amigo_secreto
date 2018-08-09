@@ -1,6 +1,6 @@
 class Member < ApplicationRecord
 
-  belongs_to :campaing
+  belongs_to :campaign
 
   validates :name, :email, :campaign, presence: true
 
@@ -18,7 +18,7 @@ class Member < ApplicationRecord
 
   protected
 
-  def set_capaign_pending
+  def set_campaign_pending
     self.campaign.update(status: :pending)
   end
 
