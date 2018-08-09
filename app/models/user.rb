@@ -6,4 +6,6 @@ class User < ApplicationRecord
          :rememberable,             :trackable,    :validatable,
          :confirmable,              :lockable
 
+  has_many :campaigns, dependent: :destroy
+
 end
