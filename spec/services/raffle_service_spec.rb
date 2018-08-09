@@ -24,7 +24,7 @@ describe RaffleService do
       end
 
       it "all members are in results as a member" do
-        result_members = @results.mapi{|r| r.first }
+        result_members = @results.map{|r| r.first }
 
         expect(result_members.sort).to eq(@campaign.members.sort)
       end
@@ -42,8 +42,8 @@ describe RaffleService do
       end
 
       it "a member x don't get a member y that get the member x" do
-        @result.each do |r|
-          member = @result.select{|x| x.first == r.last }
+        @results.each do |r|
+          member = @results.select{|x| x == r.last }
 
           expect(r.last).not_to eq(member.first)
         end
