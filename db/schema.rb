@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_07_07_162947) do
 
-  create_table "campaings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "campaigns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.datetime "event_date"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2018_07_07_162947) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_campaings_on_user_id"
+    t.index ["user_id"], name: "index_campaigns_on_user_id"
   end
 
   create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 2018_07_07_162947) do
     t.string "email"
     t.boolean "open"
     t.string "token"
-    t.bigint "campaing_id"
+    t.bigint "campaign_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["campaing_id"], name: "index_members_on_campaing_id"
+    t.index ["campaign_id"], name: "index_members_on_campaign_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -63,6 +63,6 @@ ActiveRecord::Schema.define(version: 2018_07_07_162947) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
-  add_foreign_key "campaings", "users"
-  add_foreign_key "members", "campaings"
+  add_foreign_key "campaigns", "users"
+  add_foreign_key "members", "campaigns"
 end
