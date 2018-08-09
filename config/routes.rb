@@ -8,4 +8,12 @@ Rails.application.routes.draw do
 
   mount Sidekiq::Web => '/sidekiq'
 
+  resources :campaigns, except: [ :new ] do
+    post 'raffle', on: :member
+  end
+
+  get 'members/:token/opened', to: 'members#opened'
+
+  resources :members, only: [ :create, :destroy, :update ]
+
 end
