@@ -4,6 +4,7 @@
 
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <% if current_user %>
+        <li><%= link_to raw('CAMPANHAS'), '/campaigns', class: 'btn-entrar' %></li>
         <li><%= link_to raw('PERFIL'), edit_user_registration_path(current_user), class: 'btn-entrar' %></li>
         <li><%= link_to raw('SAIR'), destroy_user_session_path, method: :delete %></li>
       <% else %>
