@@ -5,10 +5,16 @@ class Campaign < ApplicationRecord
 
   enum status: [ :pending, :finished ]
 
+  before_validation :set_status, on: :create
+  after_validation  :set_member, on: :create
+
   validates :title, :description, :user, :status, presence: true
 
-  before_create :set_status
-  before_create :set_member
+  def count_opened
+    self.members.where(open: true).count
+  end
+
+  private
 
   def set_status
     self.status = :pending
