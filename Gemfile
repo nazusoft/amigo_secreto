@@ -16,7 +16,7 @@ gem 'turbolinks',   '~> 5'
 gem 'jbuilder',     '~> 2.5'
 
 gem 'devise',           '~> 4.4'
-gem 'materialize-sass', '~> 1.0.0.rc1'
+gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons',   '~> 2.2.1'
 gem 'redis',            '~> 4.0'
 gem 'sidekiq',          '~> 5.1.0'
