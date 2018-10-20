@@ -5,6 +5,7 @@ class Member < ApplicationRecord
   validates :name, :email, :campaign, presence: true
 
   after_destroy :set_campaign_pending
+  after_create  :set_campaign_pending
 
   def create
     @member = Member.new(member_params)
