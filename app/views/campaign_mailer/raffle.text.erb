@@ -1,0 +1,13 @@
+<p>AMIGO SECRETO</p></br></br>
+
+<p><%= @campaign.title %></p></br>
+<%= (@campaign.event_date)? "#{@campaign.event_date.strftime("%d/%m/%y")} | #{@campaign.event_hour}" : '' %></br></br>
+
+<p><%= @campaign.description %></p></br></br>
+
+<p>Olá <%= @member.name %>, o(a) <%= @campaign.user.name %> criou uma campanha de amigo secreto no site Amigo Secreto e incluiu você. Logo a baixo voce pode saber com querm saiu.</p></br>
+<p>Seu amigo secreto é:&nbsp;<b><u><%= @friend.name %></p></br></br>
+
+<p><a href='http://www.nazusoft.com.br'>Crie sua campanha também.</a></p></br></br>
+
+<p>Um Projeto da equipe <a href='http://www.nazusoft.com.br'>NazuSoft</a></p>
