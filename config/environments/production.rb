@@ -62,11 +62,11 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
-    address:              ENV["SMTP_ADDRESS"],
-    port:                 ENV["SMTP_PORT"],
-    domain:               ENV["SMTP_DOMAIN"],
-    user_name:            ENV["SMTP_USER"],
-    password:             ENV["SMTP_PASSWORD"],
+    address:              Rails.application.credentials[Rails.env.to_sym][:smtp_address],
+    port:                 Rails.application.credentials[Rails.env.to_sym][:smtp_port],
+    domain:               Rails.application.credentials[Rails.env.to_sym][:smtp_domain],
+    user_name:            Rails.application.credentials[Rails.env.to_sym][:smtp_user],
+    password:             Rails.application.credentials[Rails.env.to_sym][:smtp_password],
     authentication:       :plain,
     enable_starttls_auto: true
   }
