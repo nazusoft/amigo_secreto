@@ -1,0 +1,63 @@
+<container class="body-drip">
+  <spacer size="16"></spacer>
+
+  <row>
+    <columns large="12">
+      <center>
+        <img src="http://localhost:3000/favicon.png" alt="">
+      </center>
+    </columns>
+  </row>
+  <row>
+    <columns large="8">
+      <center>
+        <h4 class='text-center'>AMIGO SECRETO</h4>
+      </center>
+    </columns>
+  </row>
+
+  <spacer size="16"></spacer>
+
+  <hr/>
+
+  <spacer size="16"></spacer>
+
+  <row>
+    <columns>
+      <center>
+        <h5><%= @email %> seja bem vindo ao Amigo Secreto !</h5>
+      </center>
+    </columns>
+  </row>
+
+  <spacer size="8"></spacer>
+
+  <row>
+    <columns>
+      <center>
+        <h5>Obrigado por criar sua conta conosco.</h5>
+        <h5>Confirme seu cadastro clicando no link abaixo:</h5>
+      </center>
+    </columns>
+  </row>
+
+  <spacer size="8"></spacer>
+
+  <row>
+    <columns>
+      <center>
+        <button href="<%= confirmation_url(@resource, confirmation_token: @token) %>" class="">Confirme sua conta !</button>
+      </center>
+    </columns>
+  </row>
+
+  <row>
+    <columns>
+      <center>
+        <h5>Boa diversão!!</h5>
+        <h5>Equipe Amigo Secreto</h5>
+      </center>
+    </columns>
+  </row>
+
+</container>

@@ -1,0 +1,11 @@
+<p>AMIGO SECRETO</p></br></br>
+
+<h5><%= @email %> seja bem vindo ao Amigo Secreto !</h5></br></br>
+
+<h5>Obrigado por criar sua conta conosco.</h5></br>
+<h5>Confirme seu cadastro clicando no link abaixo:</h5></br></br>
+
+<a href="<%= confirmation_url(@resource, confirmation_token: @token) %>" class="">Confirme sua conta !</a></br>
+
+<h5>Boa diversão!!</h5></br>
+<h5>Equipe Amigo Secreto</h5></br>
