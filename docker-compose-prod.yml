@@ -49,7 +49,6 @@ services:
     build: .
     command: bash start_jobs.sh
     volumes:
-      - .:/amigo_secreto
       - gems:/gems
     env_file:
       - env-prod.env
