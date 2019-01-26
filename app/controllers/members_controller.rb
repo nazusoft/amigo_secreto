@@ -41,7 +41,7 @@ class MembersController < ApplicationController
 
     gif = Base64.decode64("R0lGODlhAQABAPAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==")
 
-    render text: gif, type: 'image/gif'
+    render plain: gif, type: 'image/gif'
   end
 
   private
