@@ -4,7 +4,7 @@
   <row>
     <columns large="12">
       <center>
-        <img src="http://localhost:3000/favicon.png" alt="">
+        <img src='<%= "http://#{ActionMailer::Base.default_url_options[:host]}/favicon.png" %>' alt="">
       </center>
     </columns>
   </row>
@@ -75,5 +75,5 @@
     </row>
   </wrapper>
 
-  <img src='<%= "#{ActionMailer::Base.default_url_options[:host]}/members/#{@member.token}/opened" %>' width="1" height="1">
+  <img src='<%= "http://#{ActionMailer::Base.default_url_options[:host]}/members/#{@member.token}/opened" %>' width="1" height="1">
 </container>
