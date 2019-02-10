@@ -4,7 +4,7 @@
   <row>
     <columns large="12">
       <center>
-        <img src='<%= "http://#{ActionMailer::Base.default_url_options[:host]}/favicon.png" %>' alt="">
+        <img src='<%= "http://#{Rails.application.credentials[Rails.env.to_sym][:domain_name]}/img/favicon.png" %>' alt="Amigo Secreto Logo" title="Amigo Secreto Logo" width="32" height="32" style="display:block">
       </center>
     </columns>
   </row>
@@ -75,5 +75,5 @@
     </row>
   </wrapper>
 
-  <img src='<%= "http://#{ActionMailer::Base.default_url_options[:host]}/members/#{@member.token}/opened" %>' width="1" height="1">
+  <img src='<%= "http://#{Rails.application.credentials[Rails.env.to_sym][:domain_name]}/members/#{@member.token}/opened" %>' alt="Amigo Secreto Opens" title="Amigo Secreto Opens" width="1" height="1" style="display:block">
 </container>
