@@ -62,11 +62,10 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
-    address:              Rails.application.credentials[Rails.env.to_sym][:smtp_address],
-    port:                 Rails.application.credentials[Rails.env.to_sym][:smtp_port],
-    domain:               Rails.application.credentials[Rails.env.to_sym][:smtp_domain],
-    user_name:            Rails.application.credentials[Rails.env.to_sym][:smtp_user],
-    password:             Rails.application.credentials[Rails.env.to_sym][:smtp_password],
+    user_name:            Rails.application.credentials[Rails.env.to_sym][:sendgrid_username],
+    password:             Rails.application.credentials[Rails.env.to_sym][:sendgrid_password],
+    address:              'smtp.sendgrid.net',
+    port:                 587,
     authentication:       :plain,
     enable_starttls_auto: true
   }
