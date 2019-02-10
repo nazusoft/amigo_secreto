@@ -1,5 +1,7 @@
 class CampaignsController < ApplicationController
 
+  before_action :authenticate_user!
+
   respond_to :html, :json
 
   before_action :set_campaign, only: [:show, :destroy, :update, :raffle]
