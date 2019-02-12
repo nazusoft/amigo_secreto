@@ -9,9 +9,12 @@ default: &default
 
 development:
   <<: *default
+  database: amigo_secreto_development
 
 test:
   <<: *default
+  database: amigo_secreto_test
 
 production:
   <<: *default
+  database: amigo_secreto_production
