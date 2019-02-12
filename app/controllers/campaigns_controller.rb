@@ -57,7 +57,9 @@ class CampaignsController < ApplicationController
   private
 
   def set_campaign
-    @campaign = Campaign.find(params[:id])
+    @campaign = Campaign.where(id: params[:id]).first
+
+    redirect_to root_path if @campaign.nil?
   end
 
   def campaign_params
@@ -65,8 +67,8 @@ class CampaignsController < ApplicationController
   end
 
   def is_owner?
-    unless current_user == @campaign.user
-      redirect_to root_path
+    unless @campaign and (current_user == @campaign.user)
+      render json: { message: 'Você não é o dono da campanha.' }, status: :forbidden
     end
   end
 
