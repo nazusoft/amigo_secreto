@@ -8,4 +8,10 @@ class CampaignMailer < ApplicationMailer
     mail(to: @member.email, subject: "Amigo Secreto: #{@campaign.title}")
   end
 
+  def error(campaign)
+    @campaign = campaign
+
+    mail(to: @campaign.user.email, subject: "Amigo Secreto: ERRO - #{@campaign.title}")
+  end
+
 end
