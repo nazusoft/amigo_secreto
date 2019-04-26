@@ -1,3 +1,16 @@
+window.removeMemberConfirmed = (member_id) ->
+  $.ajax '/members/'+ member_id,
+      type:     'DELETE'
+      dataType: 'json',
+      data:     {}
+      success: (data) ->
+        $('#member_' + member_id).remove()
+
+        M.toast({ html: 'Membro removido', displayLength: 4000, classes: 'green' })
+      error: (jqXHR, textStatus, errorThrown) ->
+        M.toast({ html: 'Problema na remoção de membro', displayLength: 4000, classes: 'red' })
+  return false
+
 $(document).on 'turbolinks:load', ->
   $('#member_email, #member_name').keypress (e) ->
     if e.which == 13 && valid_email($( "#member_email" ).val()) && $( "#member_name" ).val() != ""
@@ -8,17 +21,12 @@ $(document).on 'turbolinks:load', ->
       $('.new_member').submit()
 
   $('body').on 'click', 'a.remove_member', (e) ->
-    $.ajax '/members/'+ e.currentTarget.id,
-        type:     'DELETE'
-        dataType: 'json',
-        data:     {}
-        success: (data) ->
-          $('#member_' + e.currentTarget.id).remove()
+    header  = "<h4>Remover Membro</h4>"
+    body    = "<p>Deseja realmente remover o membro?</p>"
+    footer  = "<a href='#' class='modal-close waves-effect waves-green btn-flat' onclick='removeMemberConfirmed("+e.currentTarget.id+")'>SIM</a>"
+    footer += "<a href='#' class='modal-close waves-effect waves-green btn-flat'>NÃO</a>"
 
-          M.toast({ html: 'Membro removido', displayLength: 4000, classes: 'green' })
-        error: (jqXHR, textStatus, errorThrown) ->
-          M.toast({ html: 'Problema na remoção de membro', displayLength: 4000, classes: 'red' })
-    return false
+    abrirModal(header,body,footer)
 
   $('.new_member').on 'submit', (e) ->
     $.ajax e.target.action,
