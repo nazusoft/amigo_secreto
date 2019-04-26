@@ -1,0 +1,58 @@
+<container class="body-drip">
+  <spacer size="16"></spacer>
+
+  <row>
+    <columns large="12">
+      <center>
+        <img src='<%= "http://#{Rails.application.credentials[Rails.env.to_sym][:domain_name]}/img/favicon.png" %>' alt="Amigo Secreto Logo" title="Amigo Secreto Logo" width="32" height="32" style="display:block">
+      </center>
+    </columns>
+  </row>
+  <row>
+    <columns large="8">
+      <center>
+        <h4 class='text-center'>AMIGO SECRETO</h4>
+      </center>
+    </columns>
+  </row>
+
+  <spacer size="16"></spacer>
+
+  <row>
+    <columns>
+      <spacer size="4"></spacer>
+
+      <p class="text-center">Olá <%= @campaign.user.email %>, ocorreu um erro no sorteio da campanha <strong><%= @campaign.title %></strong>.</p>
+
+      <spacer size="8"></spacer>
+
+      <p class="text-center">Entre em contato com o suporte !</p>
+    </columns>
+  </row>
+
+
+  <wrapper class="secondary">
+    <spacer size="16"></spacer>
+
+    <row>
+      <h5 class="text-center">Se conecte com a gente</h5>
+    </row>
+
+    <row>
+      <columns large="6">
+        <button class="facebook expand" href="https://www.facebook.com/onebitcode/">Facebook</button>
+      </columns>
+      <columns large="6">
+        <button class="twitter expand" href="https://twitter.com/onebitcode">Twitter</button>
+      </columns>
+    </row>
+  </wrapper>
+
+  <wrapper class="secondary">
+    <spacer size="2"></spacer>
+
+    <row>
+      <p class="text-center">Um Projeto da equipe <a href="http://www.nazusoft.com.br">NazuSoft</a></p>
+    </row>
+  </wrapper>
+</container>
