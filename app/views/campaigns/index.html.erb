@@ -9,46 +9,7 @@
     </div>
   <% end %>
 
-  <div class="row cards">
-    <div class="col s8 offset-s2">
-
-      <% @campaigns.each do |c| %>
-        <div class="card horizontal">
-          <div class="card-content col s9">
-
-            <div class="col s12">
-              <h5 class="title"><%= truncate(c.title, length: 30, omission: '...') %></h5>
-            </div>
-
-            <div class="col s12">
-              <h6 class="subtitle"><%= truncate(c.description, length: 70, omission: '...') %></h6>
-            </div>
-
-            <div class="col s12" style="margin-top:15px">
-              <div class="col s3 p-0">
-                <span class="new badge m-0 <%= (c.status == "pending")? 'orange' : '' %> left" data-badge-caption=""><%= (c.status == "pending")? 'PENDENTE' : 'SORTEADO' %></span>
-              </div>
-
-              <div class="col s3 p-0">
-                <p class="data"><%= format_event_date(c.event_date) %></p>
-              </div>
-
-              <div class="col s6 p-0 visibility">
-                <%= visibility(c) %>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="card-content col s3 center-align valign-wrapper">
-            <a class="waves-effect waves-green btn" href=<%= "/campaigns/#{c.id}" %>>Entrar</a>
-          </div>
-
-        </div>
-      <% end %>
-
-    </div>
-  </div>
+  <%= render partial: 'shared/campaigns_list' %>
 
   <div class="fixed-action-btn campaigns-btn">
     <%= form_tag("/campaigns", method: "post") do %>

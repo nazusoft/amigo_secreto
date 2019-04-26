@@ -1,6 +1,18 @@
 <div class="col m12">
 
-  <h3 class="center-align" style="margin-top:17%">Inove no Amigo Secreto!</h3>
+  <% if current_user %>
+    <% if not @campaigns.empty? %>
+      <div class="col s8 offset-s2">
+        <h5 class="title center green-text">CAMPANHAS</h5>
+      </div>
+
+      <%= render partial: 'shared/campaigns_list' %>
+
+      <hr>
+    <% end %>
+  <% end %>
+
+  <h3 class="center-align" style="margin-top:<%= current_user ? '2%' : '17%' %>">Inove no Amigo Secreto!</h3>
 
   <h5 class="center-align">Apenas com o email dos participantes você inicia a brincadeira.</h5>
 
