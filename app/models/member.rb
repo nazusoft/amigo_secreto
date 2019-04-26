@@ -33,6 +33,10 @@ class Member < ApplicationRecord
 
   def set_campaign_pending
     self.campaign.update(status: :pending)
+
+    self.campaign.members.each do |member|
+      member.update(open: false)
+    end
   end
 
 end
