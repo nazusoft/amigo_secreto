@@ -22,6 +22,7 @@ gem 'redis',            '~> 4.0'
 gem 'sidekiq',          '~> 5.1.0'
 gem 'inky-rb',          require: 'inky'
 gem 'premailer-rails'
+gem 'mini_racer'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
