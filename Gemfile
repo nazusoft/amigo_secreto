@@ -15,7 +15,7 @@ gem 'jquery-rails'
 gem 'turbolinks',   '~> 5'
 gem 'jbuilder',     '~> 2.5'
 
-gem 'devise',           '~> 4.4'
+gem 'devise',           '~> 4.7'
 gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons',   '~> 2.2.1'
 gem 'redis',            '~> 4.0'
